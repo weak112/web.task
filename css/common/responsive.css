@@ -207,49 +207,43 @@
   }
 
   /* 详情页面 */
-  .detail-container {
-    padding: 16px;
-  }
-
-  .detail-header {
-    flex-direction: column;
-    gap: 20px;
+  .detail-content {
+    flex-direction: column !important;
+    gap: 24px !important;
   }
 
   .detail-poster {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-    border-radius: 12px;
-    overflow: hidden;
+    width: 100% !important;
+    max-width: 280px !important;
+    margin: 0 auto !important;
   }
 
   .detail-poster img {
-    width: 100%;
-    height: auto;
-  }
-
-  .detail-info {
-    flex: 1;
+    width: 100% !important;
+    height: auto !important;
   }
 
   .detail-title {
-    font-size: 24px;
+    font-size: 24px !important;
   }
 
   .detail-meta {
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 12px;
   }
 
   .detail-description {
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.8;
   }
 
   .detail-actions {
     flex-direction: column;
     gap: 12px;
+  }
+  
+  .detail-actions .btn {
+    width: 100%;
   }
 
   /* 列表页面 */
