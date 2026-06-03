@@ -69,42 +69,7 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-function toggleTheme() {
-  const body = document.body;
-  const themeIcon = document.querySelector('.theme-icon');
-  const currentTheme = localStorage.getItem('movieapp_theme') || 'dark';
-  
-  let newTheme;
-  if (currentTheme === 'dark') {
-    newTheme = 'light';
-    body.classList.remove('dark-mode');
-    body.classList.add('light-mode');
-    if (themeIcon) themeIcon.textContent = '☀️';
-  } else {
-    newTheme = 'dark';
-    body.classList.remove('light-mode');
-    body.classList.add('dark-mode');
-    if (themeIcon) themeIcon.textContent = '🌙';
-  }
-  
-  localStorage.setItem('movieapp_theme', newTheme);
-  showToast(newTheme === 'dark' ? '已切换到暗色模式' : '已切换到亮色模式', 'success');
-}
 
-function initTheme() {
-  const savedTheme = localStorage.getItem('movieapp_theme') || 'dark';
-  const body = document.body;
-  const themeIcon = document.querySelector('.theme-icon');
-  
-  body.classList.add(savedTheme + '-mode');
-  if (themeIcon) {
-    themeIcon.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
-  }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  initTheme();
-});
 
 function toggleMobileMenu() {
   const navLinks = document.getElementById('navLinks');

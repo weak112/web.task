@@ -13,17 +13,6 @@
   --hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
 }
 
-/* 亮色模式变量 */
-body.light-mode {
-  --bg-dark: #ffffff;
-  --bg-light: #f3f4f6;
-  --text-light: #111827;
-  --text-muted: #6b7280;
-  --border-color: #e5e7eb;
-  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  --hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-}
-
 body {
   background: var(--bg-dark);
   color: var(--text-light);
@@ -45,17 +34,8 @@ body::before {
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
-  transition: filter 0.8s ease, opacity 0.8s ease;
-}
-
-body.dark-mode::before {
   filter: brightness(0.3);
   opacity: 0.7;
-}
-
-/* 亮色模式隐藏背景图，改用白色底色 */
-body.light-mode::before {
-  display: none;
 }
 
 .container {
@@ -167,11 +147,6 @@ body.light-mode::before {
   border-bottom: 1px solid var(--border-color);
 }
 
-/* 亮色模式下导航栏样式 */
-body.light-mode .navbar {
-  background: rgba(255, 255, 255, 0.95);
-}
-
 .navbar-content {
   display: flex;
   align-items: center;
@@ -203,36 +178,7 @@ body.light-mode .navbar {
   color: var(--secondary-color);
 }
 
-.theme-toggle-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid var(--border-color);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
-.theme-toggle-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1);
-}
-
-/* 亮色模式下主题切换按钮样式 */
-body.light-mode .theme-toggle-btn {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-body.light-mode .theme-toggle-btn:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.theme-icon {
-  font-size: 20px;
-}
 
 .badge {
   display: inline-block;
