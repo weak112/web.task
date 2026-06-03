@@ -1,0 +1,122 @@
+.auth-container {
+  min-height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  background: var(--bg-light);
+  border-radius: 20px;
+  padding: 48px;
+  box-shadow: var(--hover-shadow);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.auth-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.auth-subtitle {
+  color: var(--text-muted);
+}
+
+.auth-form .btn {
+  width: 100%;
+  font-size: 16px;
+  padding: 16px;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.auth-link {
+  color: var(--secondary-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+.password-strength {
+  margin-top: 8px;
+}
+
+.strength-bar {
+  height: 6px;
+  background: var(--bg-dark);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.strength-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.strength-weak {
+  width: 25%;
+  background: var(--error);
+}
+
+.strength-fair {
+  width: 50%;
+  background: var(--warning);
+}
+
+.strength-good {
+  width: 75%;
+  background: #3b82f6;
+}
+
+.strength-strong {
+  width: 100%;
+  background: var(--success);
+}
+
+.strength-text {
+  font-size: 12px;
+  margin-top: 6px;
+  color: var(--text-muted);
+}
+
+.terms-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.terms-check input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.terms-check label {
+  font-size: 14px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.terms-check a {
+  color: var(--secondary-color);
+}

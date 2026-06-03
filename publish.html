@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>发布内容 - 影跃律动</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common/reset.css">
+  <link rel="stylesheet" href="css/common/common.css">
+  <link rel="stylesheet" href="css/common/responsive.css">
+  <link rel="stylesheet" href="css/page/publish.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=40&h=40&fit=crop&crop=center" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+          影跃律动
+        </a>
+        <div class="nav-links" id="navLinks">
+        </div>
+        <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <div class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top: 40px; max-width: 800px; margin: 0 auto;">
+    <div class="publish-header" style="text-align: center; margin-bottom: 40px;">
+      <h1 class="publish-title" style="font-size: 36px; font-weight: 700; margin-bottom: 8px;">发布新内容</h1>
+      <p class="publish-subtitle" style="color: var(--text-muted);">分享你喜欢的电影或音乐</p>
+    </div>
+
+    <div class="publish-form" style="background: var(--bg-light); padding: 40px; border-radius: 20px;">
+      <form id="publishForm">
+        <div class="form-section" style="margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--border-color);">
+          <h3 class="form-section-title" style="font-size: 20px; font-weight: 700; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">📝 基本信息</h3>
+          
+          <div class="form-group">
+            <label class="form-label">标题</label>
+            <input type="text" class="form-input" id="title" placeholder="请输入标题" required>
+          </div>
+
+          <div class="form-row" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+            <div class="form-group">
+              <label class="form-label">类型</label>
+              <select class="form-input" id="type">
+                <option value="movie">电影</option>
+                <option value="music">音乐</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">分类</label>
+              <select class="form-input" id="category" required>
+                <option value="">请选择分类</option>
+                <option value="科幻">科幻</option>
+                <option value="剧情">剧情</option>
+                <option value="动画">动画</option>
+                <option value="爱情">爱情</option>
+                <option value="动作">动作</option>
+                <option value="冒险">冒险</option>
+                <option value="流行">流行</option>
+                <option value="摇滚">摇滚</option>
+                <option value="电子">电子</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">年份</label>
+              <input type="number" class="form-input" id="year" placeholder="2024">
+            </div>
+            <div class="form-group">
+              <label class="form-label">评分</label>
+              <input type="number" class="form-input" id="rating" placeholder="8.5" step="0.1" min="0" max="10">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section" style="margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--border-color);">
+          <h3 class="form-section-title">🎬 详细信息</h3>
+          
+          <div class="form-group">
+            <label class="form-label">封面图片URL</label>
+            <input type="url" class="form-input" id="poster" placeholder="https://example.com/image.jpg">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">简介</label>
+            <textarea class="textarea-input" id="description" rows="5" placeholder="请输入内容简介..." required></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">导演/作者</label>
+              <input type="text" class="form-input" id="director" placeholder="请输入">
+            </div>
+            <div class="form-group">
+              <label class="form-label">演员/歌手</label>
+              <input type="text" class="form-input" id="actors" placeholder="多个用逗号分隔">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">时长</label>
+            <input type="text" class="form-input" id="duration" placeholder="如：120分钟 / 4分30秒">
+          </div>
+        </div>
+
+        <div class="form-section" style="margin-bottom: 40px;">
+          <h3 class="form-section-title">🏷️ 标签</h3>
+          <div class="tags-input-wrapper" id="tagsContainer" style="display: flex; flex-wrap: wrap; gap: 8px; padding: 10px; background: var(--bg-dark); border: 2px solid var(--border-color); border-radius: 10px; min-height: 50px;">
+            <input type="text" class="tag-input" id="tagInput" placeholder="输入标签后按回车或逗号添加..." style="flex: 1; min-width: 120px; background: transparent; border: none; color: var(--text-light); outline: none;">
+          </div>
+          <p style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">最多添加5个标签</p>
+        </div>
+
+        <div class="form-actions" style="display: flex; gap: 16px; justify-content: flex-end;">
+          <button type="button" class="btn btn-outline" onclick="history.back()">取消</button>
+          <button type="submit" class="btn btn-primary">发布</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <h3 style="color: var(--secondary-color); margin-bottom: 10px;">影跃律动</h3>
+          <p class="text-muted">发现精彩，分享感动</p>
+        </div>
+        <div class="text-muted">
+          © 2024 影跃律动. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/common/utils.js"></script>
+  <script src="js/common/storage.js"></script>
+  <script src="js/common/validate.js"></script>
+  <script src="js/data/mock-data.js"></script>
+  <script src="js/page/publish.js"></script>
+</body>
+</html>

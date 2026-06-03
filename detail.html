@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>详情 - 影跃律动</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common/reset.css">
+  <link rel="stylesheet" href="css/common/common.css">
+  <link rel="stylesheet" href="css/common/responsive.css">
+  <link rel="stylesheet" href="css/page/detail.css">
+  <link rel="stylesheet" href="css/page/index.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=40&h=40&fit=crop&crop=center" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+          影跃律动
+        </a>
+        <div class="nav-links" id="navLinks">
+        </div>
+        <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <div class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="detail-hero">
+    <img class="detail-bg" id="detailBg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.25) blur(8px); z-index: -1;">
+    <div class="container" style="padding: 60px 0;">
+      <div class="detail-content" style="display: flex; gap: 48px;">
+        <div class="detail-poster" style="flex-shrink: 0; width: 340px;">
+          <img id="detailPoster" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 40px rgba(0,0,0,0.5);">
+        </div>
+        <div class="detail-info" style="flex: 1;">
+          <h1 class="detail-title" id="detailTitle" style="font-size: 42px; font-weight: 700; margin-bottom: 16px;"></h1>
+          <div class="detail-meta" style="display: flex; gap: 24px; margin-bottom: 24px; flex-wrap: wrap;">
+            <span class="detail-rating" id="detailRating" style="font-size: 24px; font-weight: 700; color: var(--secondary-color);"></span>
+            <span id="detailYear" style="color: var(--text-muted);"></span>
+            <span id="detailDuration" style="color: var(--text-muted);"></span>
+            <span id="detailCategory" style="color: var(--text-muted);"></span>
+            <span id="detailViews" style="color: var(--text-muted);"></span>
+          </div>
+          <div class="detail-genres" id="detailGenres" style="display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;"></div>
+          <p class="detail-description" id="detailDescription" style="font-size: 16px; line-height: 1.8; color: var(--text-muted); margin-bottom: 32px;"></p>
+          <div class="detail-actions" style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <button class="btn btn-secondary" id="favoriteBtn">❤ 收藏</button>
+            <button class="btn btn-outline" onclick="history.back()">← 返回</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" style="padding-bottom: 60px;">
+    <section class="detail-section" style="margin-bottom: 48px;">
+      <h3 class="detail-section-title" style="font-size: 24px; font-weight: 700; margin-bottom: 24px;">主创人员</h3>
+      <p style="color: var(--text-muted); margin-bottom: 16px;">导演：<span id="detailDirector" style="color: var(--text-light);"></span></p>
+      <div class="cast-list" id="castList" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 20px;"></div>
+    </section>
+
+    <section class="detail-section">
+      <h3 class="detail-section-title">相关推荐</h3>
+      <div class="related-grid" id="relatedGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px;"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <h3 style="color: var(--secondary-color); margin-bottom: 10px;">影跃律动</h3>
+          <p class="text-muted">发现精彩，分享感动</p>
+        </div>
+        <div class="text-muted">
+          © 2024 影跃律动. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/common/utils.js"></script>
+  <script src="js/common/storage.js"></script>
+  <script src="js/common/validate.js"></script>
+  <script src="js/data/mock-data.js"></script>
+  <script src="js/page/detail.js"></script>
+</body>
+</html>

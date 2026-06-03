@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>发现 - 影跃律动</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common/reset.css">
+  <link rel="stylesheet" href="css/common/common.css">
+  <link rel="stylesheet" href="css/common/responsive.css">
+  <link rel="stylesheet" href="css/page/list.css">
+  <link rel="stylesheet" href="css/page/index.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=40&h=40&fit=crop&crop=center" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+          影跃律动
+        </a>
+        <div class="nav-links" id="navLinks">
+        </div>
+        <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <div class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top: 40px;">
+    <h1 class="section-title">发现精彩</h1>
+
+    <div class="filter-bar">
+      <div class="filter-row">
+        <div class="search-box" style="flex: 2; min-width: 280px;">
+          <div class="search-input-wrapper" style="position: relative;">
+            <span class="search-icon" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted);">🔍</span>
+            <input type="text" class="form-input" id="searchInput" placeholder="搜索电影、音乐..." style="padding-left: 48px;">
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">类型</label>
+          <select class="filter-select" id="typeSelect">
+            <option value="">全部</option>
+            <option value="movie">电影</option>
+            <option value="music">音乐</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">分类</label>
+          <select class="filter-select" id="categorySelect">
+            <option value="">全部</option>
+            <option value="科幻">科幻</option>
+            <option value="剧情">剧情</option>
+            <option value="动画">动画</option>
+            <option value="爱情">爱情</option>
+            <option value="动作">动作</option>
+            <option value="冒险">冒险</option>
+            <option value="流行">流行</option>
+            <option value="摇滚">摇滚</option>
+            <option value="电子">电子</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">排序</label>
+          <select class="filter-select" id="sortSelect">
+            <option value="rating">评分最高</option>
+            <option value="views">人气最高</option>
+            <option value="newest">最新</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="results-info" style="margin: 24px 0;">
+      <span class="results-count" id="resultsCount"></span>
+      <a href="publish.html" class="btn btn-secondary" style="margin-left: auto;">
+        + 发布内容
+      </a>
+    </div>
+
+    <div class="content-grid" id="contentGrid"></div>
+
+    <div class="pagination" id="pagination"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <h3 style="color: var(--secondary-color); margin-bottom: 10px;">影跃律动</h3>
+          <p class="text-muted">发现精彩，分享感动</p>
+        </div>
+        <div class="text-muted">
+          © 2024 影跃律动. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/common/utils.js"></script>
+  <script src="js/common/storage.js"></script>
+  <script src="js/common/validate.js"></script>
+  <script src="js/data/mock-data.js"></script>
+  <script src="js/page/list.js"></script>
+</body>
+</html>
